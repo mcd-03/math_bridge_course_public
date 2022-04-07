@@ -1,0 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Math Bridge Course</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'preview/preview.css' %}">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+        <script type="text/javascript" id="MathJax-script"
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+        </script>
+        <script type ="text/javascript" src="{% static 'preview/scripts.js' %}"></script>
+        <link rel="apple-touch-icon" sizes="180x180" href="{% static 'preview/ico/apple-touch-icon.png' %}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{% static 'preview/ico/favicon-32x32.png' %}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{% static 'preview/ico/favicon-16x16.png' %}">
+        <link rel="manifest" href="{% static 'preview/ico/site.webmanifest' %}">
+    </head>
+    <body>
+        <header>
+            <div id="header-content">
+                {% include "preview/standard/header.html" %}
+            </div>
+        </header>
+        <nav class="nav-bar">
+            <div id="nav-content">
+                {% include "preview/standard/nav.html" %}
+            </div>
+        </nav>
+        {% include "preview/standard/messages.html" %}
+        {% block content %}{% endblock %}
+        <footer>
+            <div id="footer-content">
+                {% include "preview/standard/footer.html" %}
+            </div>
+        </footer>
+    </body>
+</html>

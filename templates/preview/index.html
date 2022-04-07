@@ -1,0 +1,93 @@
+{% extends 'preview/base.html' %}
+{% block content %}
+<div id="content">
+    <main>
+        <h1>Math Should Make Sense</h1>
+        <hr class='bar'>
+
+        <div class='homepage-section glass'>
+            <h2>A Bridge</h2>
+            <br>
+            <p class='homepage'>Bridges help us get from where we are to where we want to be. They help us cross places
+                we never could alone.
+                That's why we named this the Math Bridge Course. We built a bridge so you don't have to.</p>
+
+            <div class='cta-wrapper'>
+                <div class='cta'>
+                    <a href='{% url "all_courses" %}'>Learn About Our Courses</a>
+                </div>
+            </div>
+        </div>
+
+        <div class='homepage-section glass'>
+            <h2>Fits What You Need</h2>
+            <br>
+            <p class='homepage'>Whether your child has fallen behind in Math because of Covid, is looking to get a
+                preview of the next
+                course, or just wants to brush up before finals, this is the place.</p>
+            <br>
+            <p class='homepage'>As students enter the summer season, many look for ways to stay fresh on their math and
+                continue learning. This is especially true for students who will not have a math class again until the
+                second semester of the next year. Some students use private tutoring to help, but at $50 an hour or
+                more, not every student has access. We created these Bridge Courses based on the North Carolina
+                standards as a way for more students to have exposure to high level math. Math that they can complete on
+                their own schedule.</p>
+        </div>
+
+        <hr class='bar'>
+
+        <div class='homepage-section glass'>
+            <h2>What Our Students Have Said</h2>
+            <br>
+            <p class='homepage'>I finished honors math 3 last semester and got a 100 on my final!! Using your math 3
+                introduction over the summer really helped prepare me, thank you so much.</p>
+        </div>
+
+        <hr class='bar'>
+
+        <div class='homepage-section glass'>
+            <h2>How Our Courses Work</h2>
+            <br>
+            <p class='homepage'>Math Bridge Course is built with the philosophy that math should make sense. And as
+                practing educators, we know that some topics matter a lot more than others. We have broken each of our
+                courses into units and each of those units into the concepts that matter most. Each unit includes video
+                instruction, examples, practice problems, and answer keys that students can use to check their progress.
+                At the end of each unit, students are challenged with a set of mixed practice problems that cover every
+                topic in the unit. We have taken great care to align these to the depth of knowledge and rigor required
+                by the North Carolina End of Grade or End of Course assessments.</p>
+            <br>
+            <p class='homepage'>We've designed our courses to be completed asynchronously - you have everything you need
+                and can access it anytime you would like. Most students complete our courses in ten to twenty hours -
+                depending on the course and the familariity the child has with the material.</p>
+            <br>
+            <div class='cta-wrapper'>
+                <div class='cta'>
+                    <a href='{% url "all_courses" %}'>Learn About Our Courses</a>
+                </div>
+            </div>
+            <p class='homepage'>Students who complete our courses enter their next math class with a level of confidence
+                and familariity that they did not have before.</p>
+
+        </div>
+
+        <div class='homepage-section glass'>
+            <h2>Something Unique</h2>
+            <br>
+            <p class='homepage'>There are a lot of math resources out there. What we offer is something completely
+                different. Instead of random math practice and skills put together by people who haven't stepped into a
+                classroom, we offer focused math courses that are created by licensed North Carolina teachers and
+                aligned to the North Carolina standards. We've curated the topics and concepts that are highest leverage in helping
+                students achieve in math. That's not something you will find on any old website.</p>
+
+            <div class='cta-wrapper'>
+                <div class='cta'>
+                    <a href='{% url "register" %}'>Get Started With a Free Account</a>
+                </div>
+            </div>
+        </div>
+
+
+
+    </main>
+</div>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% if messages %}
+<div class='message-wrapper'>
+{% for message in messages %}
+    <div {% if message.tags %} class='message-container {{ message.tags }}'{% else %} class='message-container' {% endif %}>
+        <div class='message'>{{ message }}</div>
+        <div class='close-toggle' onclick="closeMessage(event);" >&#10006</div>
+    </div>
+{% endfor %}
+</div>
+{% endif %}

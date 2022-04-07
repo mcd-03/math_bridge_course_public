@@ -1,0 +1,15 @@
+{% extends 'preview/base.html' %}
+{% block content %}
+<div id="content">
+    <main class="shadow">
+        <h1>{{ unit.unit_name }}</h1>
+        <hr class='bar'>
+        <h2>{{ concept.goal }}</h2>
+        {% include include_template %}
+        {% include 'preview/standard/pagination.html' %}
+    </main>
+    <nav class="side-nav">
+        {% include 'preview/standard/course_nav.html' %}
+    </nav>
+</div>
+{% endblock %}

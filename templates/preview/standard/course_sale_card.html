@@ -1,0 +1,15 @@
+<div class='course-icon-card'>
+    {# setting the color inline looks like an error but django evaluates the course color before sending the html #}
+    <a class='course-icon' style='background-color: {{ course.course_color }}' href='courses/math{{ course.course_number }}'>
+        {{ course.course_initials }}
+    </a>
+    <div class='course-card-details'>
+        <ul>
+            <li class='unit-link'><a href='courses/math{{ course.course_number }}'>Learn More</a></li>
+            <li class='unit-link'>only ${{ course.price }}</li>
+            <form action='/create-checkout-session/{{ course.pk }}' method="POST">
+                <button type=submit class="card-button" id='checkout-button'>Buy Now</button>
+            </form>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+{% extends 'preview/base.html' %}
+{% load static %}
+{% block content %}
+
+<div id="content">
+
+    <main>
+        <form method="POST">{% csrf_token %}
+            <fieldset class='glass'>
+                <legend>Sign Up</legend>
+
+                {{ form.username.label_tag}}
+                {{ form.username }}
+                {{ form.username.errors }}
+                <p class='help-text'>{{ form.username.help_text }}</p>
+
+                {{ form.email.label_tag}}
+                {{ form.email }}
+                {{ form.email.errors }}
+
+                {{ form.password1.label_tag}}
+                {{ form.password1 }}
+                {{ form.password1.errors }}
+                {{ form.password2.errors }}
+
+                {{ form.password2.label_tag}}
+                {{ form.password2 }}
+                {{ form.password1.help_text }}
+
+                <div>
+                    <button type="submit">Create Account</button>
+                    <input type="hidden" name="next" value="{{ next }}">
+                </div>
+            </fieldset>
+            <div>
+                <a href='{% url "login" %}'>Already have an account?</a>
+            </div>
+        </form>
+    </main>
+</div>
+
+{% endblock %}

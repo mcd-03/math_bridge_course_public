@@ -1,0 +1,11 @@
+<div class='course-icon-card'>
+    {# setting the color inline looks like an error but django evaluates the course color before sending the html #}
+    <a class='course-icon' style='background-color: {{ course.course_color }}' href='{{ course.course_number }}-1-0'>
+        {{ course.course_initials }}
+    </a>
+    <div class='course-card-details'>
+        <ul>{% for unit in course.units.all %}
+            <li><a href='{{ course.course_number }}-{{ unit.unit_number }}-0'>{{ unit.unit_name }}</a></li>{% endfor %}
+        </ul>
+    </div>
+</div>

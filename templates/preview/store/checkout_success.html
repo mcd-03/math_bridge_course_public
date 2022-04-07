@@ -1,0 +1,15 @@
+{% extends 'preview/base.html' %}
+{% load static %}
+
+{% block content %}
+<div id="content">
+    <main class="shadow">
+
+        <h1>{{ session.metadata.course }}, headed your way!</h1>
+        <p>Thank you for your purchase. As soon as your payment is verified, access to {{ session.metadata.course }} will be automatically added
+            to your account. Log in anytime and head to the <a href="{% url 'my_courses' %}">My Courses</a> page to start studying!</p>
+        <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle class="checkmark_circle" cx="50" cy="50" r="45" fill="none"/><path class="checkmark_check" fill="none" d="m 20 60 l 20 20 l 40 -50"/></svg>
+
+    </main>
+</div>
+{% endblock %}

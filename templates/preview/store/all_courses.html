@@ -1,0 +1,24 @@
+{% extends 'preview/base.html' %}
+{% load static %}
+{% block content %}
+<div id="content">
+    <main class='glass'>
+        <h1>All Courses</h1>
+        <hr class='bar'>
+        {% if has_not_purchased %}
+        <h2>Available Courses</h2>
+        {% for course in has_not_purchased %}
+        {% include 'preview/standard/course_sale_card.html' %}{% endfor %}
+        {% else %}<h2>You have purchased all available courses.</h2>{% endif %}
+
+        {% if has_purchased %}
+        <h2>My Courses</h2>
+        {% for course in has_purchased %}
+        {% include 'preview/standard/course_card.html' %}
+        {% endfor %}{% endif %}
+    </main>
+</div>
+
+<script src="https://js.stripe.com/v3/"></script>
+
+{% endblock %}

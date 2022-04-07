@@ -1,0 +1,6 @@
+{% load static %}
+{% if concept.concept_video %}
+    <video controls poster="static/preview/standard-poster.png" >
+        <source src='{{ concept.concept_video.url }}' type="video/mp4">
+    </video>
+{% endif %}

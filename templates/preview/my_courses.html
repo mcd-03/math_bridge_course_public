@@ -1,0 +1,14 @@
+{% extends 'preview/base.html' %}
+{% load static %}
+{% block content %}
+<div id="content">
+    <main class='glass'>
+        <h1>My Courses</h1>
+        <hr class='bar'>
+        {% for course in has_purchased %}
+        {% include "preview/standard/course_card.html" %}
+        {% endfor %}
+        {% if not has_purchased %}<h2>You haven't purchased any courses yet. <a href='{% url "all_courses" %}'>Check out our current courses</a> to get started!</h2>{% endif %}
+    </main>
+</div>
+{% endblock %}

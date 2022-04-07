@@ -1,0 +1,946 @@
+/* CSS reset */
+* {
+    margin: 0px;
+    padding: 0px;
+    color: black;
+    box-sizing: border-box;
+}
+
+/* Define variables */
+:root {
+    --header-bg-color: #000080;
+    --nav-bar-bg-color: #00348D;
+    --accent-color: royalblue;
+    --shadow: 0 10px 20px rgba(0, 0, 0, .19), 0 6px 6px rgba(0, 0, 0, .23);
+}
+
+/* Basic Element Styling */
+a {
+    text-decoration: none;
+    color: var(--accent-color);
+}
+
+a:visited {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+html {
+    background-color: #FF5522;
+    background-image: url(../preview/sun-tornado.svg);
+    /* background by SVGBackgrounds.com */
+    background-attachment: fixed;
+    background-size: cover;
+    overflow-x: hidden;
+}
+
+/* CSS Grid Setup */
+body {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 5rem 3rem minmax(calc(100vh - 11rem), 1fr) minmax(3rem, auto);
+    grid-template-areas: 
+        'header'
+        'navigation'
+        'content'
+        'footer';
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    overflow-x: hidden;
+}
+
+
+#content {
+    margin-left: calc(100vw - 100%);
+    display: grid;
+    grid-template-columns: minmax(0, 800px);
+    grid-template-areas: 'main';
+    justify-content: center;
+    padding: 2rem 0 2rem 0;
+}
+
+ol {
+    margin-left: 2rem;
+}
+
+/* Header Styling */
+header {
+    grid-area: header;
+    background-color: var(--header-bg-color);
+    z-index: 1;
+}
+
+#header-content {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: minmax(0, 800px);
+    margin-left: calc(100vw - 100%);
+    color: white;
+    line-height: 3rem;
+}
+
+header > #header-content > a {
+    font-size: 3rem;
+    padding: 1rem;
+}
+
+#header-content > a, #header-content > a:visited {
+    color: white;
+}
+
+/* Nav Menu Styling */
+ul {
+    list-style: none;
+}
+  
+.nav-bar {
+    user-select: none;
+    -webkit-user-select: none;
+    grid-area: navigation;
+    background-color:var(--nav-bar-bg-color);
+    box-shadow: var(--shadow)
+}
+
+#nav-content {
+    margin-left: calc(100vw - 100%);
+    grid-template-columns: minmax(0, 800px);
+    line-height: 1rem;
+    display: flex;
+    place-content: center;
+}
+
+#nav-content > * {
+    color: white;
+}
+
+#nav-content > a {
+    font-size: 1rem;
+    padding: 1rem;
+}
+
+/* Main Styling */
+main {
+    grid-area: main;
+    border-radius: 5px;
+}
+
+main > * {
+    padding: 1rem 4rem 1rem 4rem;
+}
+
+main > h1, main > h2 {
+    margin-top: 2rem;
+}
+
+.shadow {
+    background-color: whitesmoke;
+    box-shadow: var(--shadow);
+}
+
+.glass {
+    border-radius: 5px;
+    box-shadow: var(--shadow);
+    border-color: transparent;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background-color: #f3f3f310;
+}
+
+hr.bar {
+    border: 3px solid var(--accent-color);
+    border-radius: 5px;
+    padding: 0rem;
+    width: calc(100% - 8rem);
+    margin: 1rem 4rem 1rem 4rem;
+}
+
+main > p {
+    line-height: 1.75rem;
+}
+
+main > details {
+    border: 2px solid var(--accent-color);
+    border-radius: 10px;
+    margin: 1rem 4rem 1rem 4rem;
+    padding: 1rem;
+}
+
+main > details > summary {
+    width: 100%
+}
+
+main > details > summary:hover {
+    cursor: pointer;
+}
+
+main > details[open] {
+    border-color: #FF552280;
+    background-color: #FF552280;
+}
+
+main > details[open] > summary {
+    background-color: whitesmoke;
+    border-radius: .625rem;
+}
+
+main > details > summary {
+    display: inline;
+}
+
+main > summary {
+    cursor: pointer;
+}
+
+main > details > summary > *:not(table), main > details > *:not(summary):not(table) {
+    margin: 2rem;
+    line-height: 1.5rem;
+}
+
+main > video {
+    display: block;
+    width: 100%;
+}
+
+.pagination {
+    width: 200px;
+    background-color: var(--accent-color);
+    border-radius: 50px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0rem;
+}
+
+.pagination > a, .pagination > p {
+    padding: .75rem;
+    color: white;
+    text-transform: uppercase;
+    font-size: .8rem;
+}
+
+.pagination > * {
+    display: inline-block;
+}
+
+div.pagination {
+    margin: 4rem;
+}
+
+a.prev-button, a.next_button {
+    flex-grow: 0;
+    flex-basis: 0;
+}
+
+/* Side-Panel Styling */
+nav.side-nav {
+    width: 300px;
+    height: calc(100vh - 15em);
+    position: absolute;
+    box-sizing: border-box;
+    justify-self: center;
+    transform: translateX(-600px);
+    top: 10rem;
+    padding: 1rem 1rem 1rem 0;
+    box-shadow: var(--shadow);
+    border-radius: 5px;
+    overflow-y: auto;
+    background-color: whitesmoke;
+    font-size: 1rem;
+}
+
+nav > ul > li > ul > li > ul > li {
+    list-style: disc;
+}
+
+nav > ul > li {
+    margin-left: 1.2rem;
+    margin-bottom: 1.75rem;
+}
+
+nav > ul > li::first-line {
+    font-size: 1.75rem;
+}
+
+nav > ul > li > ul > li {
+    margin-left: 1.2rem;
+    font-size: 1.5rem;
+    margin-top: 1.2rem;
+}
+
+nav > ul > li > ul > li > ul > li {
+    margin-left: 1.2rem;
+    font-size: 1rem;
+}
+
+nav > ul > li > ul > li > ul > li:first-child {
+    margin-top: 1rem;
+}
+
+nav > ul > li > ul > li > ul > li > a, nav > ul > li > ul > li > ul > li > a:visited {
+    color: var(--accent-color);
+}
+
+/* Footer Styling */
+footer {
+    grid-area: footer;
+    background-color: var(--header-bg-color);
+    box-shadow: var(--shadow);
+}
+
+#footer-content {
+    margin-left: calc(100vw - 100%);
+    display: grid;
+    grid-template-columns: minmax(0, 800px);
+    place-content: center;
+    color: white;
+}
+
+#footer-content > div {
+    color: white;
+    font-size: 1rem;
+    padding: 1rem;
+    line-height: 1rem;
+    text-align: right;
+}
+
+/* Header Styling */
+h1 {
+    font-size: 3rem;
+    font-weight: normal;
+    letter-spacing: -1.5px;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: normal;
+}
+
+h3 {
+    font-size: 1.75rem;
+    font-weight: normal;
+}
+
+h4 {
+    font-size: 1.5rem;
+    font-weight: normal;
+}
+
+h5 {
+    font-size: 1.375rem;
+    font-weight: normal;
+}
+
+h6 {
+    font-size: 1rem;
+    font-weight: bolder;
+}
+
+  /* Style Forms */
+
+form > * {
+    padding: 0rem 2rem 0rem 2rem;
+}
+
+form > div {
+    margin: 2rem 1rem 2rem 1rem;
+}
+
+form > div > a {
+    color: var(--accent-color);
+    font-weight: bolder;
+}
+
+form > div > a:visited {
+    color: var(--accent-color);
+}
+
+form > fieldset > legend {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+form > fieldset > .errorlist > * {
+    font-size: 1rem;
+    color: #856404;
+    font-family: bold;
+    padding: 0rem .25rem 0rem .25rem;
+}
+
+form > fieldset > .errorlist {
+    padding: .25rem 0rem 0rem 0rem;
+    background-color: #fff3cd;
+    border: 2px solid #ffeeba;
+    width: max-content;
+    border-radius: 5px;
+    box-shadow: var(--shadow);
+}
+
+form > fieldset > p {
+    text-indent: 0px;
+    padding: 1rem;
+}
+
+form > fieldset > input {
+    margin-top: 0rem;
+    font-size: 16px;
+}
+
+form > fieldset > label{
+    margin: 2rem 1rem 0rem 1rem;
+}
+
+form > fieldset {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-items:end;
+}
+
+form > fieldset > input {
+    width: auto;
+    max-width: 400px;
+    padding: .5rem;
+    margin: 0rem 1rem 0rem 1rem;
+}
+
+form > fieldset > .help-text, form > fieldset > ul {
+    font-size: .75rem;
+    margin: .25rem 1rem 0rem 2rem;
+    padding: 0rem;
+}
+
+form > fieldset > div > button {
+    margin: 2rem 1rem 2rem 1rem;
+}
+
+button {
+    border: 2px solid var(--accent-color);
+    font-size: 1rem;
+    color: white;
+    background-color: var(--accent-color);
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    padding: 10px;
+    box-shadow: var(--shadow);
+    width: max-content;
+}
+
+button:active {
+    transform: translateY(2px);
+    box-shadow: none;
+}
+
+/* Style messages */
+.message-wrapper {
+    position: absolute;
+    top: 11rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    z-index: 1;
+}
+
+.message-container {
+    background-color: lightgrey;
+    width: max-width(350px);
+    height: min-content;
+    display: flex;
+    align-items: space-between;
+    border-radius: 5px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .19), 0 6px 6px rgba(0, 0, 0, .23);
+    border: 2px solid black;
+}
+
+.close-toggle {
+    cursor: pointer;
+    padding: .6125rem;
+    height: 2.225rem;
+}
+
+.message {
+    width: 100%;
+    padding: .6125rem;
+}
+
+.info {
+    background-color: #cce5ff;
+    border-color: #b8daff;
+}
+
+.info > * {
+    color: #004085;
+}
+
+.success {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.success > * {
+    color: #155724;
+}
+
+.warning {
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+}
+
+.warning > * {
+    color: #856404;
+}
+
+.danger, .error {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.danger, .error > * {
+    color: #721c24;
+}
+
+.homepage-section {
+    padding: 2rem;
+    margin: 4rem;
+    border-radius: 5px;
+}
+.cta-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0 2rem 0;
+}
+
+.cta {
+    width: max-content;
+    background-color: var(--accent-color);
+    border-radius: 5px;
+    box-shadow: var(--shadow);
+    padding: .5rem;
+    font-size: 1.25rem;
+    text-align: center;
+}
+
+.cta > a, .cta > a.visited {
+    color: white;
+}
+
+p.homepage {
+    font-size: 1.25rem;
+    font-weight: lighter;
+    text-indent: 3rem;
+    line-height: 2rem;
+    text-align: justify;
+}
+
+.cta:active {
+    transform: translateY(2px);
+    box-shadow: none;
+}
+
+/* Style Success Page */
+.success-icon {
+    max-width: 300px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Style Password-Reset */
+.optional-navigation-link {
+    color: var(--accent-color);
+    font-weight: bolder;
+    margin: 2rem;
+    position: absolute;
+}
+
+.optional-navigation-link:visited {
+    color: var(--accent-color);
+}
+
+/* Style my_courses page */
+.course-icon-card {
+    width: 100%;
+    margin: 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.course-icon {
+    width: 16rem;
+    height: 16rem;
+    background-color: royalblue;
+    font-size: 8rem;
+    text-align: center;
+    line-height: 14rem;
+    border-radius: 5px;
+    box-shadow: var(--shadow);
+}
+
+a.course-icon {
+    color: white;
+}
+
+a.course-icon:visited {
+    color: white;
+}
+
+.course-card-details {
+    font-size: 1.75rem;
+}
+
+.course-card-details > * {
+    margin: 1rem;
+}
+
+.course-card-details > * > * {
+    margin: 1rem;
+}
+
+.concept-list {
+    text-align: center;
+}
+
+.graph {
+    width: calc(50% - 2.2rem);
+    margin: 1rem;
+    border: 2px solid var(--accent-color);
+    border-radius: 5px;
+}
+
+.graph-full {
+    width: calc(100% - 8rem);
+    border: 2px solid var(--accent-color);
+    border-radius: 5px;
+    margin-left: 4rem;
+    margin-right: 4rem;
+    padding: 0;
+}
+
+.fraction {
+    font-size: 1.5rem;
+}
+
+.desmos {
+    width: calc(100% - 8rem);
+    height: 400px;
+    margin-left: 4rem;
+    margin-right: 4rem;
+    padding: 0;
+}
+
+.graph {
+    width: calc(50% - 2.2rem);
+    margin: 1rem;
+    border: 2px solid var(--accent-color);
+    border-radius: 5px;
+}
+
+table {
+    margin: 2rem auto 2rem auto;
+    max-width: calc(100% - 8rem);
+    text-align: center;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+th {
+    padding: 1rem;
+    border: 1px solid black;
+}
+
+td {
+    padding: .5rem;
+    vertical-align: top;
+    border: 1px solid black;
+}
+
+.tchart > tbody > tr > td {
+    border: none;
+}
+
+.tchart > tbody > tr > td:last-child {
+    border-left: 1px solid black;
+}
+
+.tchart > tbody > tr:nth-child(2) {
+    border-top: 1px solid black;
+}
+
+.box-method >tbody > tr:first-child > *{
+    border: none;
+}
+
+.box-method > tbody > tr > td:first-child {
+    border: none;
+}
+
+/* style success checkmark */
+.checkmark {
+    margin: 2rem auto;
+    padding: 0px;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    display: block;
+    stroke-width: 4;
+    stroke: #155724;
+    stroke-miterlimit: 10;
+    box-shadow: inset 0px 0px 0px #155724;
+    animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+  }
+
+  .checkmark > * {
+      padding: 0px;
+  }
+
+  .checkmark_circle {
+    stroke-dasharray: 600;
+    stroke-dashoffset: 600;
+    stroke-width: 4;
+    stroke-miterlimit: 10;
+    stroke: #155724;
+    fill: none;
+    animation: stroke .6s cubic-bezier(0.650, 0.000, 0.450, 1.000) forwards;
+  }
+  
+  .checkmark_check {
+    transform-origin: 50% 50%;
+    stroke-dasharray: 106;
+    stroke-dashoffset: 106;
+    animation: stroke .3s cubic-bezier(0.650, 0.000, 0.450, 1.000) .8s forwards;
+    stroke: white;
+  }
+  
+  @keyframes stroke {
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+  
+  @keyframes scale {
+    0%, 100% {
+      transform: none;
+    }
+    50% {
+      transform: scale3d(1.1, 1.1, 1);
+    }
+  }
+  
+  @keyframes fill {
+    100% {
+      box-shadow: inset 0px 0px 0px 500px #155724;
+    }
+  }
+
+/* media queries */
+@media screen and (max-width: 1500px) {
+    nav.side-nav {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 800px) {
+
+    #courses-offered {
+        width: min-content;
+    }
+
+    header > #header-content > a {
+        font-size: 2rem;
+    }
+        
+    #content {
+        padding: 1rem;
+    }
+
+    main {
+        font-size: 14px;
+    }
+
+    main > * {
+        padding: .75rem 2rem .75rem 2rem;
+    }
+
+    hr.bar {
+        width: calc(100% - 4rem);  
+        margin: 1rem 2rem 1rem 2rem;
+    }
+
+    main > details {
+        margin: 1rem 2rem 1rem 2rem;
+    }
+
+    main > details > summary > p, main > details > p {
+        margin: 1rem;
+    }
+
+    div.pagination {
+        margin: 2rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+        font-weight: normal;
+        letter-spacing: -1.5px;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+        font-weight: normal;
+    }
+    
+    h3 {
+        font-size: 1.17rem;
+        font-weight: normal;
+    }
+    
+    h4 {
+        font-size: 1rem;
+        font-weight: normal;
+    }
+    
+    h5 {
+        font-size: .83rem;
+        font-weight: normal;
+    }
+    
+    h6 {
+        font-size: .75rem;
+        font-weight: bolder;
+    }
+
+    body {
+        grid-template-rows: 4rem 3rem minmax(calc(100vh - 10rem), 1fr) minmax(3rem, auto);
+    }
+
+    #header-content {
+        line-height: 2rem;
+    }
+
+    .message-wrapper {
+        position: absolute;
+        top: 9rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        z-index: 1;
+    }
+
+    .course-icon-card {
+        margin: 1rem;
+    }
+
+    .course-icon {
+        width: 12rem;
+        height: 12rem;
+        font-size: 6rem;
+        line-height: 10.5rem;
+    }
+
+    .course-card-details {
+        font-size: 1.5rem;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+
+    .nav-bar {
+        text-align: left;
+        overflow-x: scroll;
+        flex-wrap: nowrap;
+        overflow-y: hidden;
+    }
+
+    #nav-content {
+        width: max-content;
+    }
+    
+    #nav-content > * {
+        color: white;
+    }
+
+    #content {
+        padding: .75rem;
+    }
+
+    main {
+        font-size: 14px;
+    }
+
+    main > * {
+        padding: .5rem 1.5rem .5rem 1.5rem;
+    }
+
+    html {
+        font-size: 14px;
+    }
+
+    div.card {
+        width: calc(100vw - 2rem);
+    }
+
+    hr.bar {
+        width: calc(100% - 2rem);  
+        margin: 1rem;
+    }
+
+    main > details {
+        margin: 1rem;
+    }
+
+    main > details > summary > p, main > details > p {
+        margin: 1rem;
+    }
+
+    div.pagination {
+        margin: 1.5rem;
+    }
+
+    .course-icon-card {
+        margin: .5rem;
+        padding: 1rem 0rem 1rem .5rem;
+    }
+
+    .homepage-section {
+        padding: 2rem;
+        margin: 2rem;
+    }
+
+    .graph {
+        width: calc(100% - 2rem);
+    }
+
+    .graph-full {
+        width: calc(100% - 2rem);
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+}
+
+@media screen and (max-width: 450px) {
+
+    #content {
+        padding: .5rem;
+    }
+
+    .course-icon {
+        width: 8rem;
+        height: 8rem;
+        font-size: 4rem;
+        line-height: 7rem;
+    }
+
+    .course-card-details {
+        font-size: 1.25rem;
+    }
+
+    .homepage-section {
+        padding: 1rem;
+        margin: 1rem;
+    }
+
+}

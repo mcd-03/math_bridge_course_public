@@ -1,0 +1,18 @@
+
+<div class="pagination">
+    {% if prev_concept >= 0 %}
+    <a class="prev-button" href='{{ course.course_number }}-{{ unit.unit_number }}-{{ prev_concept }}'>
+        <svg xmlns="http://www.w3.org/2000/svg"width="18" height="18" viewBox="0 0 18 18"><path fill="white" d="M16.5 9l-15.5 9 3.75-8-3.75-9z" transform="scale(-1, 1) translate(-18, 0)"/></svg>
+    </a>
+    {% else %}
+    <p class="prev-button"></p>
+    {% endif %}
+    <p>{{ profile.active_concept }} out of {{ max_concept }}</p>
+    {% if next_concept %}
+    <a class="next-button" href='{{ course.course_number }}-{{ unit.unit_number }}-{{ next_concept }}'>
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><path fill="white" d="M16.5 9l-15.5 9 3.75-8-3.75-9z"/></svg>
+    </a>
+    {% else %}
+    <p class="next-button"></p>
+    {% endif %}
+</div>

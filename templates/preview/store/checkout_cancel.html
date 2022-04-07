@@ -1,0 +1,12 @@
+{% extends 'preview/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div id="content">
+        <main class="shadow">
+            <h1>Not finding what you're looking for?</h1>
+            <p>If {{ session.metadata.course }} isn't what you are looking for, checkout our <a href='{% url "all_courses" %}'>other courses.</a>
+                Or, if you have a question, reach out to info@mathbridgecourse.com</p>
+        </main>
+    </div>
+{% endblock %}

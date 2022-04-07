@@ -1,0 +1,13 @@
+{% extends 'preview/base.html' %}
+{% load static %}
+{% block content %}
+<div id="content">
+    <main class="shadow">
+        <h1>{{ course }} Course Index</h1>
+        <hr class='bar'>
+        <nav>
+            {% include 'preview/standard/course_nav.html' %}
+        </nav>
+    </main>
+</div>
+{% endblock %}

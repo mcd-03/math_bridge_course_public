@@ -1,0 +1,15 @@
+
+<ul>
+    <li>{{ course }}
+        <ul>{% for unit in course.units.all %}
+            <li>{{ unit.unit_name }}
+                <ul>{% for concept in unit.concepts.all %}
+                    <li><a href='{{ course.course_number }}-{{ unit.unit_number }}-{{ concept.concept_number }}'>
+                            {{ concept.goal }}
+                        </a>
+                    </li>{% endfor %}
+                </ul>
+            </li>{% endfor %}
+        </ul>
+    </li>
+</ul>

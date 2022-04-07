@@ -1,0 +1,46 @@
+{% extends 'preview/base.html' %}
+{% load static %}
+{% block content %}
+
+<div id="content">
+
+    {% if form.errors %}
+    <div class='message-wrapper'>
+        {% for key, value in form.errors.items %}
+        <div class='message-container warning' }>
+            <div class='message'>{{ value | escape }}</div>
+            <div class='close-toggle' onclick="closeMessage(event);">&#10006</div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <main>
+
+        <form method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+            <fieldset class='glass'>
+                <legend>Sign In</legend>
+                {{ form.username.label_tag}}
+                {{ form.username }}
+                <p class='help-text'>{{ form.username.help_text }}</p>
+
+                {{ form.password.label_tag}}
+                {{ form.password }}
+                <div>
+                    <button type="submit">Login</button>
+                    <input type="hidden" name="next" value="{{ next }}">
+                </div>
+            </fieldset>
+            <div>
+                <a href='{% url "password_reset" %}'>Reset your password</a>
+            </div>
+            <div>
+                <a href='{% url "register" %}'>Need an account?</a>
+            </div>
+
+        </form>
+    </main>
+</div>
+
+{% endblock %}

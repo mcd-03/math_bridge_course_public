@@ -1,0 +1,20 @@
+{% extends 'preview/base.html' %}
+{% block content %}
+<div id='content' >
+    <main class='shadow'>
+        <h1>{{ course }} Course Details</h1>
+        <hr class='bar'>
+        <p>{{ course.course_blurb }}</p>
+        <P>The {{ course }} course includes units on {% for unit in course.units.all %}{% if forloop.last %} and 
+            <a href='/courses/math{{ course.course_number }}/{{ unit.unit_number }}'>{{ unit.unit_name }}</a>{% else %}
+            <a href='/courses/math{{ course.course_number }}/{{ unit.unit_number }}'>{{ unit.unit_name }}</a>, {% endif %}{% endfor %}
+        </P>
+        <h2>Gain access to {{ course }}, for only {{ course.price }}!</h2>
+        <form action='/create-checkout-session/{{ course.pk }}' method="POST">
+            <button type=submit class="card-button" id='checkout-button'>Buy Now</button>
+        </form>
+    </main>
+</div>
+
+<script src="https://js.stripe.com/v3/"></script>
+{% endblock %}
